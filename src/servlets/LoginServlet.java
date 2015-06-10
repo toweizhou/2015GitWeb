@@ -59,7 +59,7 @@ public class LoginServlet extends HttpServlet {
 		out.println("<HTML>");
 		out.println("  <HEAD><TITLE>A Servlet</TITLE></HEAD>");
 		out.println("  <BODY>");
-		out.print("    This is ");
+		out.print("    This is test ");
 		out.print(this.getClass());
 		out.println(", using the GET method.Welcome "+username);
 		out.println("  </BODY>");
