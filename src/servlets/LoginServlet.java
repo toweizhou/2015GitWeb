@@ -8,6 +8,8 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import beans.UserBean;
+
 public class LoginServlet extends HttpServlet {
 
 	/**
@@ -42,6 +44,16 @@ public class LoginServlet extends HttpServlet {
 		request.setCharacterEncoding("utf-8");
 		
 		String username = request.getParameter("username");
+		String password = request.getParameter("password");
+		
+		UserBean user = new UserBean();
+		String name = null;
+		if(user.valid(username, password)){
+			name = "张三";
+		}else{
+			name = "游客";
+		}
+		
 		PrintWriter out = response.getWriter();
 		out.println("<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.01 Transitional//EN\">");
 		out.println("<HTML>");
